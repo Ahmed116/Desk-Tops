@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const mysql = require('mysql');
+const bcrypt = require('bcrypt');
 
 // app.get('/', (req, res) => res.send('API Running'));
 
