@@ -21,9 +21,13 @@
   },
   "homepage": "https://github.com/IbrahemAtef/deployBank#readme",
   "dependencies": {
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/pickers": "^3.2.10",
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.25",
     "mysql": "^2.18.1"
   },
