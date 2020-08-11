@@ -1,10 +1,14 @@
 import React from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
-import Navbar from "../../navbar/navbar";
-function home() {
+import Navbar from '../../navbar/navbar';
+import { connect } from 'react-redux';
+
+function home(props) {
+  console.log(props);
   return (
     <row>
       <Navbar />
+      <div>{props.counter}</div>
       <ReactBootstrap.Container fluid='md'>
         <ReactBootstrap.Row>
           <ReactBootstrap.Col>
@@ -130,4 +134,11 @@ function home() {
     </row>
   );
 }
-export default home;
+
+const mapStateToProps = (state) => {
+  const counter = state.counter || 0;
+
+  return { counter };
+};
+
+export default connect(mapStateToProps)(home);
