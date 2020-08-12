@@ -34,6 +34,7 @@ class login extends React.Component {
           console.log(response.data.user);
           if (response.data.success === 'login sucessfull') {
             console.log('DONE');
+            localStorage.setItem('usertoken', response.data.token);
             this.props.history.push('/custumerPage')
           }
           else{

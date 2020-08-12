@@ -145,4 +145,4 @@ import Navbar from "../../navbar/navbar";
   );
 }
 }
-export default  loginforOwner;
+export default loginforOwner;

@@ -85,7 +85,7 @@ import { AccountCircle, Lock, Email, Phone } from '@material-ui/icons';
               <img src={logo} width={200} alt='logo' />
             </Grid> */}
             <TextField
-              required
+              isRequired = {true}
              name='name'
              value={this.state.name}
              onChange={this.handleChange}

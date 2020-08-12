@@ -1,11 +1,5 @@
-import Bar from '../bar/Bar';
-import * as boot from 'react-bootstrap';
-// import { Grid, TextField, Link } from '@material-ui/core';
-import MediaCard from '../rentPage/rentPage'
-import * as moment  from 'moment';
-
-
 import { Backdrop } from '@material-ui/core';
+import * as boot from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 // import nodemailer from 'nodemailer';
 import Modal from '@material-ui/core/Modal';
@@ -31,7 +25,7 @@ import jwt_decode from 'jwt-decode';
 import Navbar from "../../navbar/navbar";
 var email ='';
 
-export default function Ownerpage() {
+export default function Bookinguser() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -46,7 +40,7 @@ export default function Ownerpage() {
         
         const fetchData = async () => {
           const result = await axios.post(
-            'http://localhost:5000/getoffice',{
+            'http://localhost:5000/getbookinguser',{
                 email
             }
           );
@@ -58,70 +52,36 @@ export default function Ownerpage() {
         fetchData();
     }, []);
     return(
-        <div>
+        <div> 
             <Navbar/>
-            <br/>
-    <Link href='/calender' onClick={console.log('kk')}>
-        <Button variant='contained' color='primary'>
-           CLENDER
-        </Button>
-    </Link>
-    <Link href='/addOffice' onClick={console.log('kk')}>
-        <Button variant='contained' color='primary'>
-            ADD OFFICE
-        </Button>
-    </Link>
-    <Link href='/bookingoffice' onClick={console.log('kk')}>
-        <Button variant='contained' color='primary'>
-            My Booking Office
-        </Button>
-    </Link>
     {data.map((element, index) => {
 				return (
-                    <boot.Container>
+                    <boot.Container> 
                     <boot.Row>
                     
                     <boot.Col>
-					{/* <boot.Card  key = {index} style={{ width: '18rem' }}>
-						<boot.Card.Img variant='top' src={element.imgUrl} />
-						<boot.Card.Body>
-							<boot.Card.Title>{element.Discription} </boot.Card.Title>
-							<boot.Card.Text>
-								Some quick example text to build on the card title and make up
-								the bulk of the card's content
-							</boot.Card.Text>
-							<boot.Button variant='primary'>Rent</boot.Button>
-						</boot.Card.Body>
-					</boot.Card> */}
                     <br/>
                     </boot.Col>
                     <boot.Col>
                         	<boot.Card  key = {index} style={{ width: '18rem' }}>
-						<boot.Card.Img variant='top' src={element.imgUrl} />
+                            <boot.Card.Title>{element.emailowner}</boot.Card.Title>
+						
 						<boot.Card.Body>
-							<boot.Card.Title>{element.Discription} </boot.Card.Title>
+							<boot.Card.Title>{element.startdate} </boot.Card.Title>
+                            <boot.Card.Title>{element.enddate} </boot.Card.Title>
 							
 						</boot.Card.Body>
 					</boot.Card>
                     <br/>
                     </boot.Col>
                     <boot.Col>
-                    <boot.Card  key = {index} style={{ width: '18rem' }}>
-						<boot.Card.Img variant='top' src={element.imgUrl} />
-
-						<boot.Card.Body>
-							<boot.Card.Title>{element.Discription} </boot.Card.Title>
-							<boot.Card.Text>
-								{element.email}
-							</boot.Card.Text>
 							     <div>
    
        
 	  </div>
     
 							 
-						</boot.Card.Body>
-					</boot.Card>
+						
                     <br/>
                     </boot.Col>
             </boot.Row>

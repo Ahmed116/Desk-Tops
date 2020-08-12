@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
-import Navbar from '../../navbar/navbar';
+import Navbar from "../../navbar/navbar";
 import { connect } from 'react-redux';
 
 function home(props) {
@@ -134,7 +134,6 @@ function home(props) {
     </row>
   );
 }
-
 const mapStateToProps = (state) => {
   const counter = state.counter || 0;
 
