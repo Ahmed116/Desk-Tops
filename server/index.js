@@ -29,9 +29,9 @@ db.connection.connect(function (err) {
 	if (err) console.log(err);
 	console.log('Connected to dataBase!');
 });
-app.get('/', function (req, res) {
-	res.send('hhh');
-});
+// app.get('/', function (req, res) {
+// 	res.send('hhh');
+// });
 app.use(cors());
 
 app.post('/registeruser', login.register);
