@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-// import photo from './photo_2017-11-23_07-26-42.jpg';
-// import logo from './201695562016-12-204225943Cooking Table-01.jpg';
+import logo from '../login/img2.jpeg';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { Grid, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { AccountCircle, Lock, Email, Phone } from '@material-ui/icons';
+import './singupcus.css';
+import logo33 from '../login/img3.jpeg';
+
+
 
   class SinCustomer extends React.Component {
 
@@ -54,14 +57,33 @@ import { AccountCircle, Lock, Email, Phone } from '@material-ui/icons';
     render() {
   return (
     <div>
-      <Grid container style={{ minHeight: '100vh' }}>
-        {/* <Grid item xs={12} sm={6}>
-          <img
-            src={photo}
-            style={{ width: '85%', height: '85%', objectFit: 'cover' }}
-            alt='brand'
-          />
-        </Grid> */}
+      <div >
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style={{backgroundColor:'#00848C'}} id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="/landingPage">Desk Tops</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/loginForOwner">LogIn As Owner</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">LogIn As Customer</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contactPage">Let's Talk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav></div>
+        <br/><br/><br/>
+      <Grid container className="test" >
+      <Grid item xs={12} sm={6}>
+            <img
+              src={logo33}
+              style={{
+                width: '95%',
+                height: '75%',
+                backgroundSize: 'cover',
+              }}
+              alt='brand'
+            />
+          </Grid>
         <Grid
           container
           item
@@ -79,11 +101,12 @@ import { AccountCircle, Lock, Email, Phone } from '@material-ui/icons';
               flexDirection: 'column',
               maxWidth: 400,
               minWidth: 300,
-            }}
+              marginBottom: '200px'
+            }} 
           >
-            {/* <Grid container justify='center'>
-              <img src={logo} width={200} alt='logo' />
-            </Grid> */}
+             <Grid container >
+                <h1>Sing Up Customer</h1>
+              </Grid>
             <TextField
               isRequired = {true}
              name='name'
@@ -146,7 +169,7 @@ import { AccountCircle, Lock, Email, Phone } from '@material-ui/icons';
               }}
             />
             <div style={{ hight: 20 }} />
-            <Button color='primary' variant='contained' onClick= {this.handleSubmit}>
+            <Button color='primary' style={{ backgroundColor: '#00848C' }} variant='contained' onClick= {this.handleSubmit}>
               {' '}
               Done{' '}
             </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../login/img2.jpg';
+import logo from '../login/img2.jpeg';
 import { AccountCircle, Lock } from '@material-ui/icons';
 import { Grid, TextField, Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
@@ -39,6 +39,7 @@ import Navbar from "../../navbar/navbar";
           }
           else{
             console.log(response.data);
+            alert('make sure your information is correct')
           }
          
         })
@@ -51,16 +52,29 @@ import Navbar from "../../navbar/navbar";
   render() {
   return (
     <div>
-      <Navbar/>
-      <Grid container style={{ minHeight: '100vh' }}>
+       <div >
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style={{backgroundColor:'#00848C'}} id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="/landingPage">Desk Tops</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/loginForOwner">LogIn As Owner</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">LogIn As Customer</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contactPage">Let's Talk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav></div>
+        <br/><br/>
+      <Grid container className='test' style={{ minHeight: '100vh' }}>
         <Grid item xs={12} sm={6}>
           <img
             src={logo}
             style={{
-              width: '80%',
-              height: '80%',
+              width: '100%',
+              height: '100%',
               objectFit: 'cover',
-              margin: '30px',
             }}
             alt='brand'
           />
@@ -82,10 +96,12 @@ import Navbar from "../../navbar/navbar";
               flexDirection: 'column',
               maxWidth: 400,
               minWidth: 300,
+              marginBottom: '200px',
+
             }}
           >
             <Grid container>
-              <h1>LOGIN</h1>
+              <h1>LOGIN OWNER</h1>
             </Grid>
             <TextField
             name='email'
@@ -115,28 +131,17 @@ import Navbar from "../../navbar/navbar";
               }}
             />
             <div style={{ height: 20 }} />
-            {/* <Link href='/custumerPage' onClick={console.log('kk')}> */}
-              <Button variant='contained' color='primary' onClick = {this.handleSubmit}>
+              <Button variant='contained' style={{ backgroundColor: '#00848C' }} color='primary' onClick = {this.handleSubmit}>
                LOGIN
               </Button>
-            {/* </Link> */}
             <div style={{ height: 20 }} />
 
-            <Link href='/signupCustomer' onClick={console.log('kk')}>
-              <Button variant='contained' color='primary'>
+            <Link href='/signupOwner' onClick={console.log('kk')}>
+            <Button variant='contained' style={{ backgroundColor: '#00848C', width:'300px'}} color='primary' className="btn">
                 register 
               </Button>
             </Link>
-            
             <br />
-            <br />
-            {/* <Link href='/signupOwner' >
-              <Button variant='contained' color='primary'>
-                register as owner
-              </Button>
-            </Link> */}
-
-            <Button>register with google</Button>
           </div>
           <div />
         </Grid>

@@ -1,17 +1,15 @@
 var db = require("./../database-mysql/index");
 const nodemailer = require ('nodemailer')
-exports.addbooking = function(req,res){
+exports.contactus = function(req,res){
     console.log(req.body);
-    var emailuser = req.body.emailuser;
-     var emailowner = req.body.emailuser;
-    let sql = "INSERT INTO bookingdata SET ?";
+    var name = req.body.name;
+    var email = req.body.email;
+    var message = req.body.message;
+    let sql = "INSERT INTO contactus SET ?";
     let post = {
-    office_id :req.body.office_id,
-    startdate :req.body.startdate,
-    enddate :req.body.enddate,
-    emailuser :req.body.emailuser,
-    emailowner :req.body.emailowner,
-    phoneuser : req.body.phoneuser
+        name : req.body.name,
+        email : req.body.email,
+        message : req.body.message
     }
     db.connection.query(sql,post, function (error, results, fields) {
         if (error) {
@@ -24,7 +22,6 @@ exports.addbooking = function(req,res){
               const log = console.log;
             
           // Step 1
-         
           let transporter = nodemailer.createTransport({
               service: 'gmail',
               auth: {
@@ -36,9 +33,9 @@ exports.addbooking = function(req,res){
           // Step 2
           let mailOptions = {
               from: 'bookingfinder5by5team@gmail.com', // TODO: email sender
-              to: emailowner, // TODO: email receiver
+              to: 'walaasbaih@gmail.com', // TODO: email receiver
               subject: 'WELECOME IN BOOKING FINDER APP ',
-              text: 'THE USER WITH THIS EMAIL ' + emailuser + '  booking the office'
+              text: "YOU RESEVE MESSAGE FROM " + name + "WITHE EMAIL" + "this is the message " + message 
           };
           
           // Step 3
@@ -49,8 +46,9 @@ exports.addbooking = function(req,res){
               return log('Email sent!!!');
           });
               
-          }
+        }
           
-      });
-      
+    });
+    
+          
 }
