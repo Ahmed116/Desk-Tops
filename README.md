@@ -17,6 +17,8 @@ How to start
 
 6- npm run dev "to run the app as local"
 
+view app here >> https://booking-finder.herokuapp.com/
+
 Team member
 ahmed hillis , niveen elkhozoner , ahmed mushtaha , walaa sbih ,khaled alshaikh ali
 
